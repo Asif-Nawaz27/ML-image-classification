@@ -358,19 +358,19 @@
         <p>So, this image visualization develops a better understanding of the relationship between the images and their labels that can ultimately lead to better model performance and more accurate predictions.</p>
         <p>This plot shows us how the prevalence of positive cases varies greatly amongst the various pathologies. (These trends also correspond with those found in the entire dataset.) We can see the label ‘Hernia’ has the greatest imbalance with the proportion of positive training cases being about 0.25%. Same as if we see the label ‘Infiltration’, which has the least amount of imbalance has only 17% of the training positive cases.</p>
 
-        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: center; margin: 20px 0; flex-wrap: wrap;">
             <div style="text-align: center; margin: 10px;">
-                <img src="Visualization_Trained_graph.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto;">
-                <label><strong>Figure 1:</strong> Percentage of Positive Labels</label>
+                <img src="Visualization_Trained_graph.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto; border: 2px solid #3498db; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50; font-size: 1.1em;"><strong>Figure 1:</strong> Percentage of Positive Labels</p>
             </div>
         </div>
 
         <p>As we can see in the Figure 2, the contribution of the positive cases is significantly less than that of the negative cases in training dataset.</p>
 
-        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: center; margin: 20px 0; flex-wrap: wrap;">
             <div style="text-align: center; margin: 10px;">
-                <img src="Positive_and_negative_graph.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto;">
-                 <label><strong>Figure 2:</strong> Percentage of Positive and Negative Labels</label>
+                <img src="Positive_and_negative_graph.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto; border: 2px solid #3498db; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50; font-size: 1.1em;"><strong>Figure 2:</strong> Percentage of Positive and Negative Labels</p>
             </div>
         </div>
 
@@ -406,15 +406,64 @@
         <h3>3.4 Model Evaluation</h3>
         <p>In the phase of the model evaluation, we rank the highest performing model according to accuracy. As previously mentioned, we store the accuracy and loss of each model in the corresponding model variables, create a new array based on the model’s variables and display visualization graph for all models.</p>
 
-        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: center; margin: 20px 0; flex-wrap: wrap;">
             <div style="text-align: center; margin: 10px;">
-                <img src="Models_comparison.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto;">
-                 <label><strong>Figure 3:</strong> Models Comparison</label>
+                <img src="Models_comparison.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto; border: 2px solid #3498db; border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50; font-size: 1.1em;"><strong>Figure 3:</strong> Models Comparison</p>
             </div>
         </div>
 
         <p>Finally, the best model based on the accuracy which is the InceptionV3 with 12% accuracy. Predicting that model on unseen data and getting the metrices like accuracy, F1-score, recall, precision, classification report as well. We describe according to the best outputs of model, True Positive, True Negative, False Positive and False Negative are used to analyze and identify the performance of the model.</p>
 
+        <div style="margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #e9ecef;">
+            <div style="text-align: center; margin: 15px 0;">
+                <strong>Accuracy:</strong><br>
+                <span style="font-size: 1.2em; margin: 10px 0; display: inline-block;">
+                    $$accuracy = \frac{TP + TN}{TP + TN + FP + FN}$$
+                </span>
+            </div>
+            
+            <div style="text-align: center; margin: 15px 0;">
+                <strong>Precision:</strong><br>
+                <span style="font-size: 1.2em; margin: 10px 0; display: inline-block;">
+                    $$precision = \frac{TP}{TP + FP}$$
+                </span>
+            </div>
+            
+            <div style="text-align: center; margin: 15px 0;">
+                <strong>Recall:</strong><br>
+                <span style="font-size: 1.2em; margin: 10px 0; display: inline-block;">
+                    $$recall = \frac{TP}{FP + FN}$$
+                </span>
+            </div>
+            
+            <div style="text-align: center; margin: 15px 0;">
+                <strong>F1 Score:</strong><br>
+                <span style="font-size: 1.2em; margin: 10px 0; display: inline-block;">
+                    $$F1 = 2 \times \frac{precision}{precision + recall}$$
+                </span>
+            </div>
+        </div>
+
+        <p>Also showing the confusion metric for all the predicted labels for the InceptionV3 model. So, the confusion matrix is a performance measurement for machine learning classification problem, particularly for binary classification. We have confusion matrix for each individual label.</p>
+        <ul style="list-style-type: none; padding-left: 10%;">
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                True Negative cases where the condition was correctly predicted.
+            </li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                False Positive cases where the condition was incorrectly predicted.
+            </li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                False Negative cases where the condition was incorrectly predicted.
+            </li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                True Positive cases where the condition was correctly predicted.
+            </li>
+        </ul>
 
         <h3>3.5 Deployment</h3>
         <p>In the deployment phase, the best-performing model, identified as <strong>InceptionV3</strong> with the highest accuracy, is saved for future use. This model is prepared for integration into a production environment where it can be utilized for real-time chest X-ray image classification. The deployment process includes finalizing the model's architecture, ensuring that it can efficiently handle unseen data, and exporting it in a format compatible with deployment platforms. The deployed model is expected to aid in medical diagnostics by accurately predicting multiple diseases from chest X-ray images.</p>
