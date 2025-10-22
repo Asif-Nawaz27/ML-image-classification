@@ -465,8 +465,31 @@
             </li>
         </ul>
 
+        
+        <div style="text-align: center; margin: 10px;">
+            <img src="Matrix_1.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+        </div>
+        <div style="text-align: center; margin: 10px;">
+            <img src="Matrix_2.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+        </div>
+        <div style="text-align: center; margin: 10px;">
+            <img src="Matrix_3.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+        </div>
+        <div style="text-align: center; margin: 10px;">
+            <img src="Matrix_4.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+        </div>
+        <div style="text-align: center; margin: 10px;">
+            <img src="Matrix_5.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+            <p style="margin-top: 10px; font-weight: bold; color: #2c3e50; font-size: 1.1em;"><strong>Figure 4:</strong> Confusion Matrices</p>
+        </div>
+    
+
+        
+
         <h3>3.5 Deployment</h3>
         <p>In the deployment phase, the best-performing model, identified as <strong>InceptionV3</strong> with the highest accuracy, is saved for future use. This model is prepared for integration into a production environment where it can be utilized for real-time chest X-ray image classification. The deployment process includes finalizing the model's architecture, ensuring that it can efficiently handle unseen data, and exporting it in a format compatible with deployment platforms. The deployed model is expected to aid in medical diagnostics by accurately predicting multiple diseases from chest X-ray images.</p>
+
+        <!-- Start the fourth section which is the Conclusion -->
 
         <h2>4. Conclusion</h2>
 
@@ -481,6 +504,8 @@
         <h3>4.3 Future Work</h3>
         <p>The limitations that I have faced during the project is the model performance on training data as I mentioned earlier in achievements section, when I fit the training and validation generator data on model that is going to be overfitting during the training process due to the dataset. right now, getting the image file path from dataset, but for the improving next will get direct from the directory when generating the data via augmentation process. For improving the model performance create the folder with the name of label and furthermore will create test and train folder in every label sub directory, put the images there will use that directory for the time of data augmentation which will give the training generator and test generator. After that will use that generator dataset for the searching best parameters and model fitting.</p>
         <p>The next step that I have to improve getting the best parameters via Random search, for now when we search best param’s for specific model, we are fitting the first batch on grid search because if we pass all the batches or generated dataset in the grid search it takes lots of time in searching and sometime giving the error due to the memory pressure (the error is out of the range or by a memory leak).</p>
+
+        <!-- Start the fifth section which is the References and Appendices -->
 
         <h2>References</h2>
         <p>The following references represent key contributions to the field of image classification and computer vision:</p>
