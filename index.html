@@ -180,37 +180,30 @@
                 <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">1.1.2 Research Rationale</li>
                 <li class="subsection">1.2 Scope and Objectives</li>
                 <li class="subsection">1.3 Achievements</li>
-                 <li class="subsection">1.4 Overview of Research</li>
+                <li class="subsection">1.4 Overview of Research</li>
 
-                <li><strong>2. Literature Review</strong></li>
-                <li class="subsection">2.1 Traditional Computer Vision Approaches</li>
-                <li class="subsection">2.2 Deep Learning Revolution</li>
+                <li><strong>2. State-of-The-Art</strong></li>
                 
-                <li><strong>3. Theoretical Framework</strong></li>
+                <li><strong>3. Methodology</strong></li>
+                <li class="subsection">3.1 Data Understanding</li>
+                <li class="subsection">3.2 Data Preparation</li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.2.1 Data Augmentation</li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.2.2 Data Visualization</li>
+                <li class="subsection">3.3 Model Building</li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.3.1 Searching Best Parameters</li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.3.2 Convolutional Neural Network (CNN) Architecture</li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.3.3 Pre-Trained Models Architecture</li>
+                <li class="subsection">3.4 Model Evaluation</li>
+                <li class="subsection">3.5 Deployment</li>
                 
-                <li><strong>4. Methodology</strong></li>
-                <li class="subsection">4.1 Dataset Selection and Preprocessing</li>
-                <li class="subsection">4.2 Model Architectures</li>
-                <li class="subsection">4.3 Training and Optimization</li>
+                <li><strong>4. Conclusion</strong></li>
+                <li class="subsection">4.1 Summary of Findings</li>
+                <li class="subsection">4.2 Evaluation</li>
+                <li class="subsection">4.3 Future Work</li>
+
+                <li><strong>5. References</strong></li>
                 
-                <li><strong>5. Experimental Setup</strong></li>
-                
-                <li><strong>6. Results and Analysis</strong></li>
-                <li class="subsection">6.1 Performance Metrics</li>
-                <li class="subsection">6.2 Comparative Analysis</li>
-                <li class="subsection">6.3 Ablation Studies</li>
-                
-                <li><strong>7. Discussion</strong></li>
-                <li class="subsection">7.1 Implications for Practice</li>
-                <li class="subsection">7.2 Limitations and Challenges</li>
-                
-                <li><strong>8. Conclusion and Future Work</strong></li>
-                <li class="subsection">8.1 Key Contributions</li>
-                <li class="subsection">8.2 Future Research Directions</li>
-                
-                <li><strong>9. References</strong></li>
-                
-                <li><strong>10. Appendices</strong></li>
+                <li><strong>6. Appendices</strong></li>
                 <li class="subsection">Appendix A: Technical Implementation Details</li>
                 <li class="subsection">Appendix B: Additional Experimental Results</li>
                 <li class="subsection">Appendix C: Code Repository</li>
@@ -297,36 +290,134 @@
 
         <!-- Start the second section which is the State-of-The-Art -->
 
-        <h2>2. Literature Review</h2>
-        <p>The field of image classification has witnessed remarkable progress over the past decades, transitioning from handcrafted feature extraction methods to sophisticated deep learning approaches. This section provides a comprehensive overview of the key developments and milestone achievements in image classification research.</p>
-        
-        <h3>2.1 Traditional Computer Vision Approaches</h3>
-        <p>Early image classification systems relied heavily on manually designed features and traditional machine learning algorithms. Techniques such as Scale-Invariant Feature Transform (SIFT), Histogram of Oriented Gradients (HOG), and Local Binary Patterns (LBP) formed the foundation of feature extraction methods.</p>
-        
-        <h3>2.2 Deep Learning Revolution</h3>
-        <p>The introduction of Convolutional Neural Networks (CNNs) marked a paradigm shift in image classification. Pioneering architectures such as LeNet, AlexNet, VGGNet, and ResNet demonstrated unprecedented performance improvements and established deep learning as the dominant approach in computer vision.</p>
-        
-        <div class="highlight">
-            <strong>Key Insight:</strong> The success of deep learning in image classification can be attributed to its ability to automatically learn hierarchical feature representations directly from raw pixel data, eliminating the need for manual feature engineering.
-        </div>
+        <h2>2. State-of-The-Art</h2>
+        <p>The goal of this project is to develop a deep learning system that can classify chest X-ray imag-es using multiple labels and identify several diseases from a single image. For example, deep learning model will identify the diseased image with the help of label which is one in dataset. Using various techniques for data understanding, data preparing, data augmenting, models building, fine-tuning hyperparameters, and assessing performance are all included in the methodology. Rotation, zoom, shear, channel shift range, brightness range, rescale, fill mode and flipping are examples of data augmentation techniques (we are using sample wise normal-ization for the training data augmentation and using feature wise normalization on validation and test data augmentation) that are used to enhance model robustness and avoid overfitting.</p>
+        <p>Before training the models, we are optimizing the best hyperparameter with using the random grid search technique, wrapping the model in kera’s classifier wrapper class then assign into random grid search function with the iterator and cross validation step. We have two methods for fine tuning of hyperparameter for models. One of the method tuning batch size and epochs and other method tuning optimizer, learning rate, init mode, activation and drop out rate with the behalf of batch size and epochs. So, this procedure is iterated over multiple models in order to determine which has the best accuracy. After that fitting train data generator on model, predict on unseen data and evaluate model on unseen data as well for getting the test accuracy and loss.</p>
+        <p>Finally, we have all models with the training results like test accuracy and loss, also Roc report as well before fitting and after the model on training generator. We are comparing all the mod-els with the based-on test accuracy and loss results and showing the model comparison graph. We are evaluating the model on unseen data having the higher accuracy, as well as measuring the matrix like recall, precision, F1 score and classification report. In the last, showing the con-fusion matrix for all predicted features with correctly and incorrectly prediction. Save the best model for deployment and integration for X-ray type application.</p>
+        <p>So, the conclusion of this project in the literature review, as per the above discussion we are building four models. The inception model is superior to other all models with higher accuracy.</p>
+        <p>So, the statement according to <strong>Yadav</strong> and <strong>Jadhav</strong> is that, [4] In order to improve the perfor-mance of image classification on small datasets, this research uses a variety of machine learning techniques, including methods based on convolutional neural networks and multiple strategies. One approach is data augmentation, which performs better than neural network- and generative adversarial network (GAN)-based techniques. Data augmentation is an alterna-tive to traditional transform-based methods. Transfer learning is an additional technique that, according to Kermany research, produced 92% accuracy on a small dataset of pneumonia X-ray images. But there are a few gaps that should be noted. One drawback of Kermany's work is that they employ the InceptionV3 model, but they don't retrain the InceptionV3 convolutional layer because of overfitting. Thus, this study will assess alternative models as well as the results of retraining the convolutional layer. Furthermore, did not contrast the capsule network's per-formance with that of other techniques. Thus, the following are the contributions of this report.</p>
+        <ul>
+            <li>Performance comparison of three distinct classification methods: training capsule network from scratch, transfer learning of VGG16 and InceptionV3, and SVM classifier with oriented fast and rotated binary robust independent elementary features (ORB).</li>
+            <li>An examination of how the CNN transfer learning method performed on the small chest X-ray dataset to determine how data augmentation, network complexity, optimized convolutional layers, and other anti-overfitting mechanisms affected the classification.</li>
+        </ul>
+
+        <p>“Medical image classification is a sub-field of image classification. It can also be applied with a variety of image classification techniques. For example, many image-enhanced techniques to improve the distinguishable characteristics for categorization. Convolutional neural network, however, is an end-to-end image classification solution, so it will learn the feature by own. Consequently, there will be no review of the literature regarding feature selection and enhancement in the medical image. The review primarily concentrates on the use of conventional techniques and transfer learning based on CNN. Additionally, on the capsule network in papers pertaining to medical images, to look into the gaps in their work and the aspects of those mod-els that are crucial to the outcome.”</p>
+        <p>So, the conclusion of this research, out of the three approaches, CNN-based transfer learning is the most effective. The capsule network is superior to the ORB and SVM classifier. In general, CNN based methods are better than traditional methods due to their ability to automatically learn and select features. The best results, slightly better than the state-of-the-art result, are obtained from the transfer learning of VGG16 with one retrained Convolutional Layer. The fea-ture can be learned from the new dataset using the unfrozen convolutional layer. As a result, the specific feature is crucial for increasing accuracy. A model's expressive power and overfit-ting must be balanced.</p>
+        <p>The statement according to <strong>D Zhang, F Ren, Y Li, L Na, Y Ma</strong> is that [5], Many techniques, es-pecially some deep learning techniques, have been described in the past year for the diagnosis of pneumonia from chest X-ray images. Thus, deep learning has been effectively used to en-hance the capabilities of computer-aided diagnosis (CAD), especially in the scope of medical imaging, image augmentation, and image reconstruction. In this research proposed a classical deep learning network named DenseNet-121, which has 121 convolutional layers. Compared to physicians with more experience, the framework received a higher F1 score. Additionally, the team introduced Weighted Binary Cross-Entropy loss to lessen the impact of imbalanced classes. The difference between the Binary Cross-Entropy loss and the weights of the imbal-anced classes was determined by the number of each label.</p>
+        <p>Several data pre-processing and augmentation techniques were applied, including random im-age translation and rotation in both horizontal and vertical directions, to increase the dataset's size and enhance the CNN model's representational ability. Baltruschat compared the perfor-mance of popular CNN models in classifying pneumonia X-ray images using the same hyper-parameter settings and image pre-processing methods in order to summarize the pneumonia classification task. The methodology proposed a two-channel CNN architecture. The first chan-nel processed the images whose contrast was increased by the CLAHE method, while the second channel processed the images whose edges were enhanced by the Canny method. Fol-lowing that, these images were used to train a multichannel CNN model to ascertain whether the patients had pneumonia.</p>
+        <p>D Zhang only predicted the one feature which label is pneumonia using the CNN based model. So, for the using to this model diagnose the pneumonia on a chest x-ray set. The following is a list of contributions made to this paper. To improve the contrast of the image, we first applied the Dynamic Histogram Equalization (DHE) technique. With this method, contrast in images can be improved without looking washed out or creating issues like checkerboard effects. Then, using only six layers that combined the ReLU activation function, drop operation, and max-pooling layers, we created a straightforward VGG-based CNN model to extract the fea-tures from the original images or earlier feature maps. The 96.07% accuracy rate and 94.41% precision rate that we were able to obtain demonstrate how well our suggested model outperforms the most advanced CNN model architectures. We included multiple comparisons of various input shapes and loss functions to show how well our suggested model performed.</p>
+
+        <!-- Start the third section which is the Methodology -->
 
         <h2>3. Methodology</h2>
-        <p>This research employs a systematic approach to investigate image classification techniques, combining theoretical analysis with empirical evaluation. The methodology encompasses dataset selection, model architecture design, training procedures, and performance evaluation metrics.</p>
+        <p>This deep learning project involving chest X-ray image classification using models such as (CNNs, VGG16, InceptionV3 and ResNet50), specifically targeting medical imaging data based on the disease labels. Here are dealing with several key components and methodologies, including data preprocessing, data augmentation, searching best parameters for models, models architecture definition, training process and performance evaluation.</p>
+        <p>I will be utilizing ‘NumPy’, ‘pandas’, ‘seaborn’ and matplotlib for data manipulation, analysis and visualization.</p>
+        <p>Importing various modules like ‘scikit-learn’ for model selection evaluation and preprocessing as well. ‘TensorFlow’ and ‘Keras’ for building and training deep learning models, imageDat-aGenerator for image augmentation and normalization.</p>
+        <p>For the model evaluation, utilizing matrices ROC-AUC, F1 score, precision, recall and confusion matrices to evaluate model performance.</p>
         
-        <h3>3.1 Dataset Selection and Preprocessing</h3>
-        <p>Multiple benchmark datasets are utilized to ensure comprehensive evaluation, including CIFAR-10, CIFAR-100, ImageNet, and custom domain-specific datasets. Data preprocessing techniques include normalization, data augmentation, and proper train-validation-test splitting.</p>
+        <h3>3.1 Data Understanding</h3>
+        <p>I have all the necessary data organized in one location, with a CSV file named ‘chest_X_ray_data’ and an accompanying images folder. The CSV file contains columns for the (Image Index, Patient ID, Atelectasis, Consolidation, Infiltration, Pneumothorax, Edema, Emphy-sema, Fibrosis, Effusion, Pneumonia, Pleural thickening, Cardiomegaly, Nodule, Mass and Hernia) labels, which will serve as features for evaluation except image index and patient id. I plan to enhance this data frame by adding a new column for the file path of each corresponding image index.</p>
         
-        <h3>3.2 Model Architectures</h3>
-        <p>The study examines various neural network architectures:</p>
+        <h3>3.2 Data Preparation</h3>
+        <p>Data preparation is the process of preparing data which is suitable for further processing and analysis on models. Key steps including collecting data, cleaning and extracting features which is suitable for machine learning algorithms:</p>
         <ul>
-            <li><strong>Convolutional Neural Networks:</strong> Traditional CNN architectures with varying depths and complexities</li>
-            <li><strong>Residual Networks:</strong> Skip connection-based models for training deeper networks</li>
-            <li><strong>Vision Transformers:</strong> Attention-based models adapted for image classification</li>
-            <li><strong>Hybrid Models:</strong> Combined approaches leveraging strengths of different architectures</li>
+            <li>Loading the dataset from CSV file named ‘chest_X_ray_data’ from the directory. The nrows parameter is set to selected number of rows to read from the file. So, the resulting dataframe is stored in train_df_main.</li>
+            <li>Drop the column named ‘No Finding’ fom train_df_main and extract all predicted labels which is use for image classification. Utilizing the ‘Glob’ library for getting the image file from directory so, the list of images path is stored in ‘image_paths’ variable</li>
+            <li>Split the dataset in various part train_set, valid_set and test_set. The train_test_split function is used to split the data into training, validation and testing sets with a test size of 0.2. The ‘random_state’ parameter is set to RANDOM_STATE variable</li>
+            <li>Added ‘FilePath’ column in all datasets based on the Image index because we have image name and image Index value is same in file and directory. Also remove the duplicate rows from split datasets</li>
         </ul>
         
-        <h3>3.3 Training and Optimization</h3>
-        <p>Model training incorporates advanced optimization techniques including adaptive learning rates, regularization methods, and transfer learning strategies. Hyperparameter tuning is performed using systematic grid search and random search approaches.</p>
+        <h3>3.2.1 Data Augmentation</h3>
+        <p>The process of artificially creating new data from preexisting data, known as data augmentation. Modern machine learning models are very powerful, so this is a crucial step in the dataset building process. If these models are given too small datasets, they may begin to "overfit," which is a problem where the models simply memorize the mappings between their inputs and expected outputs.</p>
+        <p>In the code I have two functions for data augmentation one ‘get_train_generator’ is giving augmented generator for training dataset, and other ‘get_test_and_valid_generator’ is giving augmented generator for validation and testing dataset. One of the most important thing, generating augmented data based on the flow_from_dataframe here is the couple of configuration where I’m using in ImageDataGenerator for training data</p>
+
+        <ul>
+            <li><strong>samplewise_center = true: </strong>utilizing the center option each image by subtracting the mean pixel value from each pixel. So rather than doing this for whole dataset, it is done for each individual image.</li>
+            <li><strong>samplewise_std_normalization= true: </strong>utilizing this option for standardization of images is achieved by subtracting the mean pixel value and dividing the result by the standard deviation of the pixel values.</li>
+            <li><strong>rotation_range= 32: </strong>this parameter specifies the maximum rotation angle (in degrees) that will be applied. In this project I’m using maximum rotation angle is 32 degrees.</li>
+            <li><strong>shear_range= 0.1: </strong>parameter will apply random shear transformation on the images. So the maximum angle of radians that will be applied. Here the maximum shear angle is 0.1 radians.</li>
+            <li><strong>zoom_range= 0.15: </strong>parameter will apply random zoom transformation on the images. So the parameter specifies the maximum zoom factor that will be applied. In this case the maximum zoom factor is 0.15, which mean that the image will be zoomed in or out by up to 15%.</li>
+            <li><strong>width_shift_range=0.1: </strong>parameter specifies the maximum horizontal shift as a frac-tion of the image width that will be applied. In this case the maximum horizontal shift is 0.1 which mean that the image will be shifted by up to 10% width.</li>
+            <li><strong>height_shift_range=0.05: </strong>parameter specifies the maximum vertical shift as friction of the image height that will be applied. In this case the maximum vertical shift is 0.05, which mean that the image will be shifted by up to 5% height.</li>
+            <li><strong>rescale=1./255: </strong>So the rescale parameter specifies the scaling factor that will be ap-plied on the pixel values.</li>
+            <li><strong>brightness_range=(0.8, 1.2): </strong>this parameter specifies the minimum and maximum brightness multiplier that will be applied. In this case the brightness will be adjusted by a factor between 0.8 and 1.2.</li>
+            <li><strong>horizontal_flip=True: </strong>parameter applies a random horizontal flip to the images. If True, image will be flipped horizontally with a probability of 0.5.</li>
+            <li><strong>vertical_flip=False: </strong>this parameter applies a random vertical flip to the images. So, in the case vertical flipping is disabled.</li>
+            <li><strong>fill_mode=reflect: </strong>parameter mean image will be reflected at the boundary.</li>
+        </ul>
+
+        <h3>3.2.2 Data Visualization</h3>
+        <p>Data visualization is the process of graphical representation of data, at this stage we have train, valid and test generator batch dataset with various configuration by image data generator. For the multi-classification of image that will be show single X-ray image having multiple diseases that will predict at the end of evaluation. So, this figure showing the labels on each image that will represent diseases on that X-ray image. For example, a patient could have Infiltration and Hernia, and model should correctly predict both conditions.</p>
+
+        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+            <div style="text-align: center; margin: 10px;">
+                <img src="Visualization_1.png" alt="Result Chest X-ray Image" style="max-width: 600px; height: auto;">
+            </div>
+        </div>
+
+        <p>So, this image visualization develops a better understanding of the relationship between the images and their labels that can ultimately lead to better model performance and more accurate predictions.</p>
+        <p>This plot shows us how the prevalence of positive cases varies greatly amongst the various pathologies. (These trends also correspond with those found in the entire dataset.) We can see the label ‘Hernia’ has the greatest imbalance with the proportion of positive training cases being about 0.25%. Same as if we see the label ‘Infiltration’, which has the least amount of imbalance has only 17% of the training positive cases.</p>
+
+        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+            <div style="text-align: center; margin: 10px;">
+                <img src="Visualization_Trained_graph.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto;">
+                <label><strong>Figure 1:</strong> Percentage of Positive Labels</label>
+            </div>
+        </div>
+
+        <p>As we can see in the Figure 2, the contribution of the positive cases is significantly less than that of the negative cases in training dataset.</p>
+
+        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+            <div style="text-align: center; margin: 10px;">
+                <img src="Positive_and_negative_graph.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto;">
+                 <label><strong>Figure 2:</strong> Percentage of Positive and Negative Labels</label>
+            </div>
+        </div>
+
+        <h3>3.3 Model Building</h3>
+        <p>Utilizing machine learning model convolutional neural Networks (CNNs) and pre trained models such as (InceptionV3, VGG16 and ResNet50) imageNet weights, excluding the top layers typically involves various components like weights, include top and input shape</p>
+
+        <h3>3.3.1 Searching Best Parameters</h3>
+        <p>Before fitting the model on the training and validation datasets, it's important to determine the best parameters using RandomizedSearchCV along with a Keras classifier. The following steps outline the process of finding the optimal parameters using this approach.</p>
+        <p>I created two methods for finding the best parameters on train generator dataset. The first method named (get_batch_parameter) feeding the model with default values in search the best batch size and epochs on one augmented batch which is default 32. Same as for the sec-ond searching method named (get_parameters_using_bacth) feeding the model with default values and batch size and epochs which got best from the first method. This method gives the best optimizer, learning rate, init mode, activation and dropout rate for that model.</p>
+        <p>We defined the array of all parameters and build dictionary for all parameters. Pass the keras model to random search class as well as grid search dictionary and iteration step with cross validation score.</p>
+
+        <h3>3.3.2 Convolutional Neural Network (CNN) Architecture</h3>
+        <p>I wrap this model in function having parameters with default values, and that parameters is using in function body:</p>
+        <p><strong>Input Layer:</strong> Defined the sequential model then add the input layer with convolutional layer that has 64 filter, a 3*3 kernel size, and use the activation parameter with default value is relu and also add kernel initializer function with assign the default value of init_mode. So the input shape matches the size of the images, and padding is assign to same to preserve the spatial dimensions.</p>
+        <p><strong>Conv2D Layers:</strong> Convolutional layers with 32, 64, and 128 filters are gradually added by the model. These layers capture various level of features, so from the low level features like edges and textures in earlier layers to more complex patterns in deeper layers.</p>
+        <p><strong>MaxPooling2D Layers:</strong> Pooling layers follow every set of convolutional layers, which overcomes the spatial dimensions and helping to generalize the learned features. This down sampling overcomes the computational load and helps prevent overfitting.</p>
+        <p><strong>Dropout Layers:</strong> After every pooling layer, set the dropout layer with the parameter drop-out_rate default value is 0.5 where randomly deactivate neurons during training time, which is also help to overcomes overfitting.</p>
+        <p><strong>Fully Connected Layer:</strong> The fully connected layer begins by flattening the output from the last convolutional layer into a one-dimensional vector. A dense layer with 1024 units and default ReLU activation follows, enabling the model to learn complex patterns from the extracted features. To mitigate overfitting, a dropout layer with a specified rate is applied after this dense layer. The output layer, designed for multi-label classification, has units equal to the number of labels and uses a sigmoid default activation function to generate probability scores for each label.</p>
+        <p><strong>Compilation:</strong> For the CNN model compilation, binary_crossentropy is employed as the loss function, suitable for independent label predictions, with default Adam as the optimizer set to a 0.01 default learning rate, and accuracy as the metric to evaluate performance.</p>
+
+
+        <h3>3.3.3 Pre-Trained Models Architecture</h3>
+        <p>In this project we are using three pre-trained models which is (RESNET50, VGG16 and InceptionV3) these models having the same architecture except base layer. Every model wrapped in the individual function with parameters having default values, thus these default values are using at the time of best parameters searching. Every model will reinitialize after finding the best parameter values and then that values will be feed to specific model. Now defining the layers that will be common in for every models.</p>
+        <p><strong>Input Layer:</strong> defined the input layer with the shape of image size is 128*128 and colour channel is 3 (which is in the RGB).</p>
+        <p><strong>Base Model:</strong> Defined the pre-trained model architecture, which is exclude the fully connected layers at the top of the model network, keeping only the convolutional base layer. Also initializ-es the base model with pre trained weights with ImageNet dataset. So, at the end of this layer using inputs which is defined in the previous step.</p>
+        <p><strong>Freezing Base Layer:</strong> Freez the layers of the base model which is prevent from being updated during training. This layer only to allow the model to use the pre-trained features.</p>
+        <p><strong>Dense and Dropout Layers:</strong> dense layers are fully connected that help the model to learn on complex patterns. So, for the dense layer filters are gradually added in convolutional layers which is 64, 128 and 512, and for the output connected convolutional layers is 1024. Dropout rate is defined in parameter which is 0.5.</p>
+        <p><strong>Fully Connected Layer:</strong> the first layer is flattening the output of the previous layer into a one-dimensional vector. So the forth layer as mentioned in connected layer is dense with the filter is 1024. Also added the dropout rate layer with default value of dropout_rate parameter. Add the next layer is dense with the units are equal to the length of the predicted labels with searched activation function.</p>
+        <p><strong>Compilation:</strong> In the model compilation, utilizing the ‘binary_crossentropy’ loss which is suitable for multi-label classification where each label is treated independently. For the model default optimizer function using Adam with the default learning rate is 0.01. Next, last and third parameter is metrics which is accuracy to evaluate the model performance.</p>
+
+        <p>I'm writing for the definition of each of the models. To find the best parameters, I first assign the model to the Kera’s classifier using default values, as I previously discussed in the model architecture. Subsequently, the parameter values will be assigned to the respective model, and the model summary will be displayed in support of the optimal parameter values. Next, before fitting the model, make predictions about unseen data. Run the model fit on a data generator for both training and validation. We will obtain the historical data on model fitting in order to display the loss and accuracy graph visualization. Next, test the model on hypothetical data to determine its accuracy and loss, then store the name of a particular model variable to deter-mine which model performs the best. After fitting the training data, predict the model on unseen data once more. The ROC report for that particular model will then be displayed. The same process is implemented on all models.</p>
+
+        <h3>3.4 Model Evaluation</h3>
+        <p>In the phase of the model evaluation, we rank the highest performing model according to accuracy. As previously mentioned, we store the accuracy and loss of each model in the corresponding model variables, create a new array based on the model’s variables and display visualization graph for all models.</p>
+
+        <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
+            <div style="text-align: center; margin: 10px;">
+                <img src="Models_comparison.png" alt="Trained Model Performance Graph" style="max-width: 600px; height: auto;">
+                 <label><strong>Figure 3:</strong> Models Comparison</label>
+            </div>
+        </div>
+
+        <p>Finally, the best model based on the accuracy which is the InceptionV3 with 12% accuracy. Predicting that model on unseen data and getting the metrices like accuracy, F1-score, recall, precision, classification report as well. We describe according to the best outputs of model, True Positive, True Negative, False Positive and False Negative are used to analyze and identify the performance of the model.</p>
+
+
+
+
 
         <h2>4. Results and Analysis</h2>
         <p>This section presents the experimental results obtained from implementing and evaluating various image classification models across different datasets and scenarios.</p>
@@ -344,29 +435,7 @@
         <h3>4.3 Ablation Studies</h3>
         <p>Detailed ablation studies investigate the contribution of individual components to overall model performance, providing insights into the most critical architectural elements and training strategies.</p>
 
-        <h2>5. Discussion</h2>
-        <p>The research findings highlight several important aspects of modern image classification systems and their practical implications for real-world applications.</p>
-        
-        <h3>5.1 Implications for Practice</h3>
-        <p>The results suggest that selecting appropriate model architectures depends heavily on specific application requirements, available computational resources, and dataset characteristics. Practitioners should consider these factors when implementing image classification systems.</p>
-        
-        <h3>5.2 Limitations and Challenges</h3>
-        <p>Despite significant advances, several limitations persist in current image classification approaches, including sensitivity to adversarial attacks, requirement for large training datasets, and computational complexity for deployment in resource-constrained environments.</p>
-
-        <h2>6. Conclusion and Future Work</h2>
-        <p>This dissertation provides a comprehensive investigation of image classification techniques, contributing to the understanding of deep learning approaches in computer vision. The research demonstrates the effectiveness of modern architectures while identifying areas for future improvement.</p>
-        
-        <h3>6.1 Key Contributions</h3>
-        <ul>
-            <li>Comprehensive analysis of state-of-the-art image classification techniques</li>
-            <li>Novel insights into hybrid model architectures</li>
-            <li>Extensive experimental validation across multiple datasets</li>
-            <li>Practical recommendations for model selection and deployment</li>
-        </ul>
-        
-        <h3>6.2 Future Research Directions</h3>
-        <p>Future work should focus on developing more efficient architectures, improving model interpretability, enhancing robustness against adversarial attacks, and exploring applications in emerging domains such as medical imaging and autonomous systems.</p>
-
+       
         <h2>7. References</h2>
         <p>The following references represent key contributions to the field of image classification and computer vision:</p>
         
