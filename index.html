@@ -416,27 +416,24 @@
         <p>Finally, the best model based on the accuracy which is the InceptionV3 with 12% accuracy. Predicting that model on unseen data and getting the metrices like accuracy, F1-score, recall, precision, classification report as well. We describe according to the best outputs of model, True Positive, True Negative, False Positive and False Negative are used to analyze and identify the performance of the model.</p>
 
 
+        <h3>3.5 Deployment</h3>
+        <p>In the deployment phase, the best-performing model, identified as <strong>InceptionV3</strong> with the highest accuracy, is saved for future use. This model is prepared for integration into a production environment where it can be utilized for real-time chest X-ray image classification. The deployment process includes finalizing the model's architecture, ensuring that it can efficiently handle unseen data, and exporting it in a format compatible with deployment platforms. The deployed model is expected to aid in medical diagnostics by accurately predicting multiple diseases from chest X-ray images.</p>
 
+        <h2>4. Conclusion</h2>
 
+        <h3>4.1 Summary of Findings</h3>
+        <p>This project focuses on the multi-label classification of chest X-ray images using deep learning models, aiming to predict multiple diseases from a single image. The methodology involves several key steps, including understanding the data, preparation of the data, data augmentation, model building with hyperparameter tuning, and performance evaluation. Data augmentation techniques like rotation, shear, and flipping are employed to prevent overfitting and enhance model robustness.</p>
+        <p>The dissertation outlines a systematic approach to finding the optimal hyperparameters for the models. Two methods are used: one for searching the best parameters across batches and epochs, and another for tuning learning rates, initialization modes, activation functions, and dropout rates. Once the best parameters are identified, they are applied to the models, which are then trained on the data. After training, the models are evaluated on unseen data, and performance is visualized through metrics like ROC curves.</p>
+        <p>The process is repeated across different models, with the goal of identifying the model that achieves the highest accuracy. The best-performing model is then subjected to further evalua-tion, including the generation of confusion matrices, F1-score, recall, precision and classification reports. Finally, this model is saved and prepared for deployment, where it can be utilized to assist radiologists by automating the detection of multiple diseases from chest X-rays, thereby reducing their workload and improving diagnostic efficiency.</p>
+        
+        <h3>4.2 Evaluation</h3>
+        <p>The objective of this project was to develop a robust and accurate deep learning models capabilities of classifying multiple diseases from chest X-ray images. The model aimed to assist in the medical diagnosis of conditions such as Atelectasis, Consolidation, Infiltration, Pneumothorax, Edema, Emphysema, Fibrosis, Effusion, Pneumonia, Pleural thickening, Cardiomegaly, Nodule, Mass and Hernia, even in the presence of unseen data, varying image quality, and diverse patient demographics. The project assessed four deep learning models for the classification of several thoracic diseases from chest X-ray images. The model low accuracy and performance metrics across various neuron layers were caused by overfitting, despite the fact that it was intended to reduce false positives and negatives and improve generalization.</p>
+        
+        <h3>4.3 Future Work</h3>
+        <p>The limitations that I have faced during the project is the model performance on training data as I mentioned earlier in achievements section, when I fit the training and validation generator data on model that is going to be overfitting during the training process due to the dataset. right now, getting the image file path from dataset, but for the improving next will get direct from the directory when generating the data via augmentation process. For improving the model performance create the folder with the name of label and furthermore will create test and train folder in every label sub directory, put the images there will use that directory for the time of data augmentation which will give the training generator and test generator. After that will use that generator dataset for the searching best parameters and model fitting.</p>
+        <p>The next step that I have to improve getting the best parameters via Random search, for now when we search best param’s for specific model, we are fitting the first batch on grid search because if we pass all the batches or generated dataset in the grid search it takes lots of time in searching and sometime giving the error due to the memory pressure (the error is out of the range or by a memory leak).</p>
 
-        <h2>4. Results and Analysis</h2>
-        <p>This section presents the experimental results obtained from implementing and evaluating various image classification models across different datasets and scenarios.</p>
-        
-        <h3>4.1 Performance Metrics</h3>
-        <p>Model performance is evaluated using multiple metrics including accuracy, precision, recall, F1-score, and computational efficiency measures. Cross-validation techniques ensure statistical significance of the results.</p>
-        
-        <h3>4.2 Comparative Analysis</h3>
-        <p>Comprehensive comparison reveals significant variations in model performance across different scenarios. While traditional CNNs demonstrate robust performance on standard datasets, Vision Transformers show superior results on large-scale datasets with adequate training data.</p>
-        
-        <div class="highlight">
-            <strong>Key Finding:</strong> Hybrid models combining convolutional layers with attention mechanisms achieve optimal performance balance between accuracy and computational efficiency.
-        </div>
-        
-        <h3>4.3 Ablation Studies</h3>
-        <p>Detailed ablation studies investigate the contribution of individual components to overall model performance, providing insights into the most critical architectural elements and training strategies.</p>
-
-       
-        <h2>7. References</h2>
+        <h2>References</h2>
         <p>The following references represent key contributions to the field of image classification and computer vision:</p>
         
         <ol>
@@ -453,7 +450,7 @@
         
         <p><em>Note: This is a representative selection of references. The complete bibliography contains additional sources covering theoretical foundations, methodological approaches, and recent advances in image classification research.</em></p>
 
-        <h2>8. Appendices</h2>
+        <h2>Appendices</h2>
         
         <h3>Appendix A: Technical Implementation Details</h3>
         <p>This section provides detailed implementation specifications, including hyperparameter configurations, training procedures, and computational requirements for reproducing the experimental results.</p>
