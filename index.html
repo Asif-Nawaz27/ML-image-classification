@@ -180,6 +180,276 @@
             content: '↑';
             font-weight: bold;
         }
+        
+        /* Mobile and Tablet Responsive Styles */
+        @media screen and (max-width: 1024px) {
+            /* Tablet View */
+            body {
+                max-width: 85%;
+                padding: 15px;
+                font-size: 16px;
+            }
+            
+            .main-title {
+                font-size: 2.2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            article {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .table-of-contents {
+                padding: 15px;
+            }
+            
+            .table-of-contents li {
+                padding-left: 15px;
+                font-size: 0.95em;
+            }
+            
+            .table-of-contents li.subsection {
+                padding-left: 30px;
+                font-size: 0.9em;
+            }
+            
+            /* Adjust confusion matrix layout for tablets */
+            .confusion-matrix-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .confusion-matrix-grid > div {
+                max-width: 80%;
+                margin: 15px 0;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            /* Mobile View */
+            body {
+                max-width: 95%;
+                padding: 10px;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            
+            .header {
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .main-title {
+                font-size: 1.8em;
+                margin-bottom: 8px;
+                line-height: 1.2;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+                line-height: 1.3;
+            }
+            
+            article {
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 6px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+                margin-top: 20px;
+                margin-bottom: 12px;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+            
+            /* Table of Contents Mobile Optimization */
+            .table-of-contents {
+                padding: 12px;
+                margin: 15px 0;
+            }
+            
+            .table-of-contents ul {
+                padding-left: 0;
+            }
+            
+            .table-of-contents li {
+                margin: 6px 0;
+                padding-left: 10px;
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+            
+            .table-of-contents li.subsection {
+                padding-left: 25px;
+                font-size: 0.85em;
+            }
+            
+            .table-of-contents li.subsection[style*="60px"] {
+                padding-left: 40px !important;
+                font-size: 0.8em !important;
+            }
+            
+            /* Lists Mobile Optimization */
+            ul[style*="padding-left: 10%"] {
+                padding-left: 5% !important;
+            }
+            
+            li[style*="padding-left: 20px"] {
+                padding-left: 15px !important;
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+            
+            /* Image and Figure Mobile Optimization */
+            div[style*="display: flex"] img {
+                max-width: 100% !important;
+                height: auto !important;
+                margin: 10px 0;
+            }
+            
+            div[style*="display: flex"] {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            
+            div[style*="text-align: center"] {
+                margin: 10px 0 !important;
+            }
+            
+            /* Mathematical Formulas Mobile */
+            div[style*="background-color: #f8f9fa"] {
+                padding: 15px !important;
+                margin: 15px 0 !important;
+            }
+            
+            span[style*="font-size: 1.2em"] {
+                font-size: 1em !important;
+                display: block !important;
+                margin: 8px 0 !important;
+            }
+            
+            /* Back to Top Button Mobile */
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            /* Author Info Mobile */
+            .author-info {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            
+            /* Keywords Mobile */
+            .keywords {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            
+            /* Abstract Mobile */
+            .abstract {
+                padding: 15px;
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+            
+            /* Highlight Box Mobile */
+            .highlight {
+                padding: 12px;
+                margin: 12px 0;
+                font-size: 0.9em;
+            }
+            
+            /* Footer Mobile */
+            .footer {
+                margin-top: 30px;
+                padding: 15px;
+                font-size: 0.85em;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            /* Small Mobile View */
+            body {
+                max-width: 98%;
+                padding: 8px;
+                font-size: 14px;
+            }
+            
+            .main-title {
+                font-size: 1.5em;
+                line-height: 1.1;
+            }
+            
+            .subtitle {
+                font-size: 0.9em;
+            }
+            
+            article {
+                padding: 12px;
+                margin: 12px 0;
+            }
+            
+            h1 {
+                font-size: 1.4em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+            }
+            
+            .table-of-contents li {
+                font-size: 0.85em;
+                margin: 4px 0;
+            }
+            
+            .table-of-contents li.subsection {
+                font-size: 0.8em;
+                padding-left: 20px;
+            }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            /* Ultra-compact lists for small screens */
+            li[style*="padding-left: 15px"] {
+                padding-left: 10px !important;
+                font-size: 0.85em !important;
+            }
+            
+            /* Smaller mathematical formulas */
+            div[style*="background-color: #f8f9fa"] {
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+        }
     </style>
 </head>
 <body>
