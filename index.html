@@ -247,10 +247,19 @@
         
         <h3>1.1.2 Research Rationale</h3>
         <p>Is it possible to create a multi-label classification model using deep learning that can effectively identify and categorize various medical conditions from chest X-ray images, thereby enhancing diagnostic accuracy/precision and enhancing patient outcomes?</p>
-        <ul>
-            <li>to create a deep learning model that can identify various medical conditions from chest X-ray images.</li>
-            <li>To assess the suggested model's effectiveness in terms of recall, accuracy, precision, F1-score, and confusion matrices.</li>
-            <li>to assess how well the suggested model performs in comparison to current CAD (computer-aided diagnosis technology) systems and radiologists.</li>
+        <ul style="list-style-type: none; padding-left: 3%;">
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                to create a deep learning model that can identify various medical conditions from chest X-ray images.
+            </li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                To assess the suggested model's effectiveness in terms of recall, accuracy, precision, F1-score, and confusion matrices.
+            </li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                to assess how well the suggested model performs in comparison to current CAD (computer-aided diagnosis technology) systems and radiologists.
+            </li>
         </ul>
 
         <h3>1.2 Scope and Objectives</h3>
@@ -296,9 +305,15 @@
         <p>Finally, we have all models with the training results like test accuracy and loss, also Roc report as well before fitting and after the model on training generator. We are comparing all the mod-els with the based-on test accuracy and loss results and showing the model comparison graph. We are evaluating the model on unseen data having the higher accuracy, as well as measuring the matrix like recall, precision, F1 score and classification report. In the last, showing the con-fusion matrix for all predicted features with correctly and incorrectly prediction. Save the best model for deployment and integration for X-ray type application.</p>
         <p>So, the conclusion of this project in the literature review, as per the above discussion we are building four models. The inception model is superior to other all models with higher accuracy.</p>
         <p>So, the statement according to <strong>Yadav</strong> and <strong>Jadhav</strong> is that, [4] In order to improve the perfor-mance of image classification on small datasets, this research uses a variety of machine learning techniques, including methods based on convolutional neural networks and multiple strategies. One approach is data augmentation, which performs better than neural network- and generative adversarial network (GAN)-based techniques. Data augmentation is an alterna-tive to traditional transform-based methods. Transfer learning is an additional technique that, according to Kermany research, produced 92% accuracy on a small dataset of pneumonia X-ray images. But there are a few gaps that should be noted. One drawback of Kermany's work is that they employ the InceptionV3 model, but they don't retrain the InceptionV3 convolutional layer because of overfitting. Thus, this study will assess alternative models as well as the results of retraining the convolutional layer. Furthermore, did not contrast the capsule network's per-formance with that of other techniques. Thus, the following are the contributions of this report.</p>
-        <ul>
-            <li>Performance comparison of three distinct classification methods: training capsule network from scratch, transfer learning of VGG16 and InceptionV3, and SVM classifier with oriented fast and rotated binary robust independent elementary features (ORB).</li>
-            <li>An examination of how the CNN transfer learning method performed on the small chest X-ray dataset to determine how data augmentation, network complexity, optimized convolutional layers, and other anti-overfitting mechanisms affected the classification.</li>
+        <ul style="list-style-type: none; padding-left: 3%;">
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                Performance comparison of three distinct classification methods: training capsule network from scratch, transfer learning of VGG16 and InceptionV3, and SVM classifier with oriented fast and rotated binary robust independent elementary features (ORB).
+            </li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                An examination of how the CNN transfer learning method performed on the small chest X-ray dataset to determine how data augmentation, network complexity, optimized convolutional layers, and other anti-overfitting mechanisms affected the classification.
+            </li>
         </ul>
 
         <p>“Medical image classification is a sub-field of image classification. It can also be applied with a variety of image classification techniques. For example, many image-enhanced techniques to improve the distinguishable characteristics for categorization. Convolutional neural network, however, is an end-to-end image classification solution, so it will learn the feature by own. Consequently, there will be no review of the literature regarding feature selection and enhancement in the medical image. The review primarily concentrates on the use of conventional techniques and transfer learning based on CNN. Additionally, on the capsule network in papers pertaining to medical images, to look into the gaps in their work and the aspects of those mod-els that are crucial to the outcome.”</p>
@@ -320,30 +335,62 @@
         
         <h3>3.2 Data Preparation</h3>
         <p>Data preparation is the process of preparing data which is suitable for further processing and analysis on models. Key steps including collecting data, cleaning and extracting features which is suitable for machine learning algorithms:</p>
-        <ul>
-            <li>Loading the dataset from CSV file named ‘chest_X_ray_data’ from the directory. The nrows parameter is set to selected number of rows to read from the file. So, the resulting dataframe is stored in train_df_main.</li>
-            <li>Drop the column named ‘No Finding’ fom train_df_main and extract all predicted labels which is use for image classification. Utilizing the ‘Glob’ library for getting the image file from directory so, the list of images path is stored in ‘image_paths’ variable</li>
-            <li>Split the dataset in various part train_set, valid_set and test_set. The train_test_split function is used to split the data into training, validation and testing sets with a test size of 0.2. The ‘random_state’ parameter is set to RANDOM_STATE variable</li>
-            <li>Added ‘FilePath’ column in all datasets based on the Image index because we have image name and image Index value is same in file and directory. Also remove the duplicate rows from split datasets</li>
+        <ul style="list-style-type: none; padding-left: 3%;">
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                Loading the dataset from CSV file named 'chest_X_ray_data' from the directory. The nrows parameter is set to selected number of rows to read from the file. So, the resulting dataframe is stored in train_df_main.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                Drop the column named 'No Finding' fom train_df_main and extract all predicted labels which is use for image classification. Utilizing the 'Glob' library for getting the image file from directory so, the list of images path is stored in 'image_paths' variable</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                Split the dataset in various part train_set, valid_set and test_set. The train_test_split function is used to split the data into training, validation and testing sets with a test size of 0.2. The 'random_state' parameter is set to RANDOM_STATE variable</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                Added 'FilePath' column in all datasets based on the Image index because we have image name and image Index value is same in file and directory. Also remove the duplicate rows from split datasets</li>
         </ul>
         
         <h3>3.2.1 Data Augmentation</h3>
         <p>The process of artificially creating new data from preexisting data, known as data augmentation. Modern machine learning models are very powerful, so this is a crucial step in the dataset building process. If these models are given too small datasets, they may begin to "overfit," which is a problem where the models simply memorize the mappings between their inputs and expected outputs.</p>
         <p>In the code I have two functions for data augmentation one ‘get_train_generator’ is giving augmented generator for training dataset, and other ‘get_test_and_valid_generator’ is giving augmented generator for validation and testing dataset. One of the most important thing, generating augmented data based on the flow_from_dataframe here is the couple of configuration where I’m using in ImageDataGenerator for training data</p>
 
-        <ul>
-            <li><strong>samplewise_center = true: </strong>utilizing the center option each image by subtracting the mean pixel value from each pixel. So rather than doing this for whole dataset, it is done for each individual image.</li>
-            <li><strong>samplewise_std_normalization= true: </strong>utilizing this option for standardization of images is achieved by subtracting the mean pixel value and dividing the result by the standard deviation of the pixel values.</li>
-            <li><strong>rotation_range= 32: </strong>this parameter specifies the maximum rotation angle (in degrees) that will be applied. In this project I’m using maximum rotation angle is 32 degrees.</li>
-            <li><strong>shear_range= 0.1: </strong>parameter will apply random shear transformation on the images. So the maximum angle of radians that will be applied. Here the maximum shear angle is 0.1 radians.</li>
-            <li><strong>zoom_range= 0.15: </strong>parameter will apply random zoom transformation on the images. So the parameter specifies the maximum zoom factor that will be applied. In this case the maximum zoom factor is 0.15, which mean that the image will be zoomed in or out by up to 15%.</li>
-            <li><strong>width_shift_range=0.1: </strong>parameter specifies the maximum horizontal shift as a frac-tion of the image width that will be applied. In this case the maximum horizontal shift is 0.1 which mean that the image will be shifted by up to 10% width.</li>
-            <li><strong>height_shift_range=0.05: </strong>parameter specifies the maximum vertical shift as friction of the image height that will be applied. In this case the maximum vertical shift is 0.05, which mean that the image will be shifted by up to 5% height.</li>
-            <li><strong>rescale=1./255: </strong>So the rescale parameter specifies the scaling factor that will be ap-plied on the pixel values.</li>
-            <li><strong>brightness_range=(0.8, 1.2): </strong>this parameter specifies the minimum and maximum brightness multiplier that will be applied. In this case the brightness will be adjusted by a factor between 0.8 and 1.2.</li>
-            <li><strong>horizontal_flip=True: </strong>parameter applies a random horizontal flip to the images. If True, image will be flipped horizontally with a probability of 0.5.</li>
-            <li><strong>vertical_flip=False: </strong>this parameter applies a random vertical flip to the images. So, in the case vertical flipping is disabled.</li>
-            <li><strong>fill_mode=reflect: </strong>parameter mean image will be reflected at the boundary.</li>
+        <ul style="list-style-type: none; padding-left: 3%;">
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>samplewise_center = true: </strong>utilizing the center option each image by subtracting the mean pixel value from each pixel. So rather than doing this for whole dataset, it is done for each individual image.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>samplewise_std_normalization= true: </strong>utilizing this option for standardization of images is achieved by subtracting the mean pixel value and dividing the result by the standard deviation of the pixel values.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>rotation_range= 32: </strong>this parameter specifies the maximum rotation angle (in degrees) that will be applied. In this project I'm using maximum rotation angle is 32 degrees.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>shear_range= 0.1: </strong>parameter will apply random shear transformation on the images. So the maximum angle of radians that will be applied. Here the maximum shear angle is 0.1 radians.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>zoom_range= 0.15: </strong>parameter will apply random zoom transformation on the images. So the parameter specifies the maximum zoom factor that will be applied. In this case the maximum zoom factor is 0.15, which mean that the image will be zoomed in or out by up to 15%.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>width_shift_range=0.1: </strong>parameter specifies the maximum horizontal shift as a frac-tion of the image width that will be applied. In this case the maximum horizontal shift is 0.1 which mean that the image will be shifted by up to 10% width.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>height_shift_range=0.05: </strong>parameter specifies the maximum vertical shift as friction of the image height that will be applied. In this case the maximum vertical shift is 0.05, which mean that the image will be shifted by up to 5% height.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>rescale=1./255: </strong>So the rescale parameter specifies the scaling factor that will be ap-plied on the pixel values.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>brightness_range=(0.8, 1.2): </strong>this parameter specifies the minimum and maximum brightness multiplier that will be applied. In this case the brightness will be adjusted by a factor between 0.8 and 1.2.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>horizontal_flip=True: </strong>parameter applies a random horizontal flip to the images. If True, image will be flipped horizontally with a probability of 0.5.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>vertical_flip=False: </strong>this parameter applies a random vertical flip to the images. So, in the case vertical flipping is disabled.</li>
+            <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                <span style="position: absolute; left: 0; color: #2c3e50; font-weight: bold;">❖</span>
+                <strong>fill_mode=reflect: </strong>parameter mean image will be reflected at the boundary.</li>
         </ul>
 
         <h3>3.2.2 Data Visualization</h3>
