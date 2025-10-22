@@ -144,6 +144,42 @@
             border-top: 2px solid #ecf0f1;
             color: #7f8c8d;
         }
+        
+        /* Back to Top Button Styles */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        .back-to-top:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top::before {
+            content: '↑';
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -174,39 +210,39 @@
         <h1>Table of Contents</h1>
         <div class="table-of-contents">
             <ul>
-                <li><strong>1. Introduction</strong></li>
-                <li class="subsection">1.1 Background and Context</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">1.1.1 Problem Statement</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">1.1.2 Research Rationale</li>
-                <li class="subsection">1.2 Scope and Objectives</li>
-                <li class="subsection">1.3 Achievements</li>
-                <li class="subsection">1.4 Overview of Research</li>
+                <li><strong><a href="#introduction" style="text-decoration: none; color: inherit;">1. Introduction</a></strong></li>
+                <li class="subsection"><a href="#background-context" style="text-decoration: none; color: inherit;">1.1 Background and Context</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#problem-statement" style="text-decoration: none; color: inherit;">1.1.1 Problem Statement</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#research-rationale" style="text-decoration: none; color: inherit;">1.1.2 Research Rationale</a></li>
+                <li class="subsection"><a href="#scope-objectives" style="text-decoration: none; color: inherit;">1.2 Scope and Objectives</a></li>
+                <li class="subsection"><a href="#achievements" style="text-decoration: none; color: inherit;">1.3 Achievements</a></li>
+                <li class="subsection"><a href="#overview-research" style="text-decoration: none; color: inherit;">1.4 Overview of Research</a></li>
 
-                <li><strong>2. State-of-The-Art</strong></li>
+                <li><strong><a href="#state-of-art" style="text-decoration: none; color: inherit;">2. State-of-The-Art</a></strong></li>
                 
-                <li><strong>3. Methodology</strong></li>
-                <li class="subsection">3.1 Data Understanding</li>
-                <li class="subsection">3.2 Data Preparation</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.2.1 Data Augmentation</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.2.2 Data Visualization</li>
-                <li class="subsection">3.3 Model Building</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.3.1 Searching Best Parameters</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.3.2 Convolutional Neural Network (CNN) Architecture</li>
-                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;">3.3.3 Pre-Trained Models Architecture</li>
-                <li class="subsection">3.4 Model Evaluation</li>
-                <li class="subsection">3.5 Deployment</li>
+                <li><strong><a href="#methodology" style="text-decoration: none; color: inherit;">3. Methodology</a></strong></li>
+                <li class="subsection"><a href="#data-understanding" style="text-decoration: none; color: inherit;">3.1 Data Understanding</a></li>
+                <li class="subsection"><a href="#data-preparation" style="text-decoration: none; color: inherit;">3.2 Data Preparation</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#data-augmentation" style="text-decoration: none; color: inherit;">3.2.1 Data Augmentation</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#data-visualization" style="text-decoration: none; color: inherit;">3.2.2 Data Visualization</a></li>
+                <li class="subsection"><a href="#model-building" style="text-decoration: none; color: inherit;">3.3 Model Building</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#best-parameters" style="text-decoration: none; color: inherit;">3.3.1 Searching Best Parameters</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#cnn-architecture" style="text-decoration: none; color: inherit;">3.3.2 Convolutional Neural Network (CNN) Architecture</a></li>
+                <li class="subsection" style="padding-left: 60px; font-size: 0.9em;"><a href="#pretrained-models" style="text-decoration: none; color: inherit;">3.3.3 Pre-Trained Models Architecture</a></li>
+                <li class="subsection"><a href="#model-evaluation" style="text-decoration: none; color: inherit;">3.4 Model Evaluation</a></li>
+                <li class="subsection"><a href="#deployment" style="text-decoration: none; color: inherit;">3.5 Deployment</a></li>
                 
-                <li><strong>4. Conclusion</strong></li>
-                <li class="subsection">4.1 Summary of Findings</li>
-                <li class="subsection">4.2 Evaluation</li>
-                <li class="subsection">4.3 Future Work</li>
+                <li><strong><a href="#conclusion" style="text-decoration: none; color: inherit;">4. Conclusion</a></strong></li>
+                <li class="subsection"><a href="#summary-findings" style="text-decoration: none; color: inherit;">4.1 Summary of Findings</a></li>
+                <li class="subsection"><a href="#evaluation" style="text-decoration: none; color: inherit;">4.2 Evaluation</a></li>
+                <li class="subsection"><a href="#future-work" style="text-decoration: none; color: inherit;">4.3 Future Work</a></li>
 
-                <li><strong>5. References</strong></li>
+                <li><strong><a href="#references" style="text-decoration: none; color: inherit;">5. References</a></strong></li>
                 
-                <li><strong>6. Appendices</strong></li>
-                <li class="subsection">Appendix A: Technical Implementation Details</li>
-                <li class="subsection">Appendix B: Additional Experimental Results</li>
-                <li class="subsection">Appendix C: Code Repository</li>
+                <li><strong><a href="#appendices" style="text-decoration: none; color: inherit;">6. Appendices</a></strong></li>
+                <li class="subsection"><a href="#appendix-a" style="text-decoration: none; color: inherit;">Appendix A: Technical Implementation Details</a></li>
+                <li class="subsection"><a href="#appendix-b" style="text-decoration: none; color: inherit;">Appendix B: Additional Experimental Results</a></li>
+                <li class="subsection"><a href="#appendix-c" style="text-decoration: none; color: inherit;">Appendix C: Code Repository</a></li>
             </ul>
         </div>
     </article>
@@ -227,7 +263,7 @@
     <article>
         <h1>Research Content</h1>
         
-        <h2>1. Introduction</h2>
+        <h2 id="introduction">1. Introduction</h2>
         <p>The research main goal is to create an image classification system using machine learning to help with the diagnosis of various diseases, including pneumonia, cardiomegaly, emphysema, diffusion, mass, and other conditions that are scanned on chest X-rays. Convolutional neural networks (CNNs) are utilized by the system to extract features, taking advantage of their capacity to capture spatial hierarchies of images by means of multiple convolutional and pooling layers. Using transfer learning, pre-trained models like VGG16, ResNet50, and InceptionV3 are compared and optimized for best performance alongside CNN architecture.</p>
         <p>Deep learning is a subset of machine learning, which classify tasks across multiple domains have been transformed. Convolutional neural networks have become the standard architecture in medical diagnosis because of their capacity to extract features from images. Multiple layers of convolutional and pooling operations make up CNNs, which enable the network to recognize complex patterns of the images. Deep learning is especially useful for image recognition in ma-chine learning via different medium.</p>
         <p>This statement according by Igor kononenko [1] that is “Medical datasets were the initial source of design and application for machine learning algorithms. These days, machine learning offers a number of essential instruments for astute data analysis. The digital revolution has made it relatively cheap and accessible to gather and store data, especially in the last few years. Large information systems collect and share data, and modern hospitals are well-equipped with monitoring and other data collection tools. Medical data analysis is currently a good fit for machine learning technology, and in particular, a lot of work has been done in the area of medical diagnosis in small, specialized diagnostic problems.”</p>
@@ -236,16 +272,16 @@
         <p>Deep learning needs a huge amount of data to get better result. Especially on medical problem to get and annotate the data is very important and time-consuming process. There are some solutions to solve the problem, one already little bit discuss on above is data augmentation which is prevent the overfitting and improves the accuracy on training data and another method for boosting the performance of in deep learning particularly CNNs which is named as transfer learning. So, in this project we will be utilize data augmentation method.</p>
         <p>Here is the discussion on feature extraction using convolution, for all the models will be use IMAGE_SIZE variable (which represent the image pixels) which is [128,128] that will be used as input to standard feed-forward neural networks to solve image classification.</p>      
 
-        <h3>1.1 Background and Context</h3>
+        <h3 id="background-context">1.1 Background and Context</h3>
         <p>In this project, utilizing machine learning model convolutional neural Networks (CNNs) and pre trained models such as (InceptionV3, VGG16 and ResNet50) imageNet weights, excluding the top layers typically involves various components like weights, include top and input shape.</p>
         <p>So, the study focuses on the use on convolutional neural networks, to improve image classification for chest X-ray used in medical diagnosis. CNNs is ability to precisely extract complex patterns and deep learning. This has helped to diagnosis the conditions like all the features. The research build data augmentation and deep learning to improve model performance, identify the challenges.</p>
         
-        <h3>1.1.1 Problem Statement</h3>
+        <h3 id="problem-statement">1.1.1 Problem Statement</h3>
         <p>For thoracic diseases to be effectively treated and patient outcomes to be improved, an early and accurate diagnosis is essential. The most widely used imaging technique for diagnosing diseases like Atelectasis, Consolidation, and Infiltration is a chest X-ray. Nevertheless, the inter-pretation of these images is difficult and frequently arbitrary, greatly depending on radiologists' experience. This may result in inconsistent diagnosis, particularly in settings with limited re-sources where skilled radiologists might not be available.</p>
         <p>Radiologists are under a lot of pressure due to the growing number of chest X-rays that require analysis, which increases the risk of diagnostic mistakes and delays. Furthermore, a lot of thoracic diseases share similar visual features and symptoms, making it challenging to differentiate between them just by manual interpretation. This intricacy highlights the requirement for an automated, trustworthy instrument that can help with the precise categorization of thoracic diseases.</p>
         <p>The goal of this project is to create a deep learning model that can use chest X-ray images to automatically classify a variety of thoracic diseases. With just one image, the model will be trained to distinguish between different conditions and produce multi-label predictions. The model can potentially outperform conventional diagnostic techniques by learning to recognize patterns and anomalies linked to specific diseases by utilizing extensive datasets like ChestX-ray. The implementation of this model aims to enhance diagnostic accuracy, reduce the work-load on radiologists, and improve the overall efficiency of the healthcare system.</p>
         
-        <h3>1.1.2 Research Rationale</h3>
+        <h3 id="research-rationale">1.1.2 Research Rationale</h3>
         <p>Is it possible to create a multi-label classification model using deep learning that can effectively identify and categorize various medical conditions from chest X-ray images, thereby enhancing diagnostic accuracy/precision and enhancing patient outcomes?</p>
         <ul style="list-style-type: none; padding-left: 3%;">
             <li style="margin: 8px 0; padding-left: 20px; position: relative;">
@@ -262,7 +298,7 @@
             </li>
         </ul>
 
-        <h3>1.2 Scope and Objectives</h3>
+        <h3 id="scope-objectives">1.2 Scope and Objectives</h3>
         <p>Develop a robust and accurate deep learning model to automatically classify medical diseases from chest X-ray images. The model should be able to detect multiple diseases from a single X-ray image, providing a reliable tool that can assist medically diagnosing conditions such as Ate-lectasis, Consolidation, Infiltration, Pneumothorax, and other Hernia.</p>
         <p>The robustness of the model refers to the ability to perform well across a variety of conditions, including noisy data, variation in image quality and different patient’s demographics. A model should generalize well to new, unseen data, mean it should make accurate predictions even on X-ray images that various from those in the training set. So, in medically diagnostics, precision is essential. To reduce false positives—identifying a disease when one is not present—and false negatives—failing to detect a disease when one is present the model needs to have high precision and recall rates.</p>
         <p>In this case, models are not predicting well due to the dataset, because (generating training and validation data using the image data generator with augmentation and fit that training and validation dataset on models each epochs going to be overfitting), are all models giving the low accuracy on different neuron layers as well as rest of the metrics is not having best results.</p>
@@ -288,18 +324,18 @@
         <p>The Scope of the project will primarily be utilizing chest X-ray dataset which is a large collection of X-ray images labelled with 14 various diseases and added extra column “FilePath” in dataset for append path of the images in that column based on the Image Index column. I’m exploring the dataset to understand its structure, labels distribution, and image characteristics. This include identifying missing data or inconsistencies with the dataset.</p>
         <p>Data Preprocessing: Splitting the dataset different training, validation and testing sets to ensure unbiased model evaluation. Apply a variety of augmentation technique (like rotation, sample wise standard normalization, shear range, width & height shift range, horizontal & vertical flip brightness range, rescale and fill model) to enhance training dataset, improving the model ability to generalize to unseen data.</p>
 
-        <h3>1.3 Achievements</h3>
+        <h3 id="achievements">1.3 Achievements</h3>
         <p>We evaluated four models by using deep learning convolutional layers, as defined the architecture of all models step by step in methodology. The deep learning models having capable of accurately classifying multiple thoracic diseases from chest x-ray images. Models effectively addresses complex challenges such as multi label classification, class imbalance and the high dimensionality of medical images. Implemented techniques such as class weighting, data augmentation and sample weighting, which ensured that the model performed well cross both common and rare thoracic diseases.</p>
         <p>Performance of the models which is not well on training data because when we fit training dataset on model that is going overfit due to the dataset. The reason behind this for the identification of the label is 0 or 1. So, the most of the datapoint is 0 which mean no diseases at all, the datapoint is 1 mean have disease on that label. It could be the reason training data on the model is going to overfitting. Also is not evaluating well on unseen dataset.</p>
         <p>Thus, the best model with the highest accuracy among the four models is displayed overall in this project. Showing the results for that best model which is accuracy, recall, F1-score, preci-sion and classification report as well which showing the result for label support. As well as showing the confusion metrices for all predicted labels and at the end deploy that model for integration.</p>
        
-        <h3>1.4 Overview of Research</h3>
+        <h3 id="overview-research">1.4 Overview of Research</h3>
         <p>This project evaluates the x-ray image dataset using machine learning models, which are briefly described in the project methodology section and already mentioned in the introduction. This dissertation focuses on using deep learning models to classify images. Focusing on multi-label classification, where a single image may have several associated disease labels—is crucial. The following are crucial steps: understanding the data, building a model with hyperparameter tuning, enhancing and visualizing the data, and evaluating the performance of the model. Therefore, augmentation with different configurations such as range rotation, shear range, flipping, and others is used to prevent overfitting on the models.</p>
         <p>I am writing this section for the overview of models. In this article, all predicted models adhered to the same format. Like how to construct the first method that searches for the optimal parameters across batches and epochs, another method searches for the optimal parameters across learning rate, initialization mode, activation for dense layers, and dropout rate for the optimizer. Thus, as I indicated, there are two ways to look for the ideal parameters for a given model. Prior to fitting the training data to the model, the best fit will be assigned to a particular model and that model will be predicted on unseen data. Subsequently, the model is fitted using training data, and a report on model history visualization is displayed. After fitting the model and displaying the Roc report for the same data before and after training, predict the model once more on unseen data. The same processes are then taken for the other models, until the best accuracy model is obtained. The classification report for that model is then displayed, along with the confusion metrics, before the model is saved and deployed for use. So, the conclusion of the overview is that building this project for multi labels classification in medical field. It will be overcome burden of radiologists.</p>
 
         <!-- Start the second section which is the State-of-The-Art -->
 
-        <h2>2. State-of-The-Art</h2>
+        <h2 id="state-of-art">2. State-of-The-Art</h2>
         <p>The goal of this project is to develop a deep learning system that can classify chest X-ray imag-es using multiple labels and identify several diseases from a single image. For example, deep learning model will identify the diseased image with the help of label which is one in dataset. Using various techniques for data understanding, data preparing, data augmenting, models building, fine-tuning hyperparameters, and assessing performance are all included in the methodology. Rotation, zoom, shear, channel shift range, brightness range, rescale, fill mode and flipping are examples of data augmentation techniques (we are using sample wise normal-ization for the training data augmentation and using feature wise normalization on validation and test data augmentation) that are used to enhance model robustness and avoid overfitting.</p>
         <p>Before training the models, we are optimizing the best hyperparameter with using the random grid search technique, wrapping the model in kera’s classifier wrapper class then assign into random grid search function with the iterator and cross validation step. We have two methods for fine tuning of hyperparameter for models. One of the method tuning batch size and epochs and other method tuning optimizer, learning rate, init mode, activation and drop out rate with the behalf of batch size and epochs. So, this procedure is iterated over multiple models in order to determine which has the best accuracy. After that fitting train data generator on model, predict on unseen data and evaluate model on unseen data as well for getting the test accuracy and loss.</p>
         <p>Finally, we have all models with the training results like test accuracy and loss, also Roc report as well before fitting and after the model on training generator. We are comparing all the mod-els with the based-on test accuracy and loss results and showing the model comparison graph. We are evaluating the model on unseen data having the higher accuracy, as well as measuring the matrix like recall, precision, F1 score and classification report. In the last, showing the con-fusion matrix for all predicted features with correctly and incorrectly prediction. Save the best model for deployment and integration for X-ray type application.</p>
@@ -324,16 +360,16 @@
 
         <!-- Start the third section which is the Methodology -->
 
-        <h2>3. Methodology</h2>
+        <h2 id="methodology">3. Methodology</h2>
         <p>This deep learning project involving chest X-ray image classification using models such as (CNNs, VGG16, InceptionV3 and ResNet50), specifically targeting medical imaging data based on the disease labels. Here are dealing with several key components and methodologies, including data preprocessing, data augmentation, searching best parameters for models, models architecture definition, training process and performance evaluation.</p>
         <p>I will be utilizing ‘NumPy’, ‘pandas’, ‘seaborn’ and matplotlib for data manipulation, analysis and visualization.</p>
         <p>Importing various modules like ‘scikit-learn’ for model selection evaluation and preprocessing as well. ‘TensorFlow’ and ‘Keras’ for building and training deep learning models, imageDat-aGenerator for image augmentation and normalization.</p>
         <p>For the model evaluation, utilizing matrices ROC-AUC, F1 score, precision, recall and confusion matrices to evaluate model performance.</p>
         
-        <h3>3.1 Data Understanding</h3>
+        <h3 id="data-understanding">3.1 Data Understanding</h3>
         <p>I have all the necessary data organized in one location, with a CSV file named ‘chest_X_ray_data’ and an accompanying images folder. The CSV file contains columns for the (Image Index, Patient ID, Atelectasis, Consolidation, Infiltration, Pneumothorax, Edema, Emphy-sema, Fibrosis, Effusion, Pneumonia, Pleural thickening, Cardiomegaly, Nodule, Mass and Hernia) labels, which will serve as features for evaluation except image index and patient id. I plan to enhance this data frame by adding a new column for the file path of each corresponding image index.</p>
         
-        <h3>3.2 Data Preparation</h3>
+        <h3 id="data-preparation">3.2 Data Preparation</h3>
         <p>Data preparation is the process of preparing data which is suitable for further processing and analysis on models. Key steps including collecting data, cleaning and extracting features which is suitable for machine learning algorithms:</p>
         <ul style="list-style-type: none; padding-left: 3%;">
             <li style="margin: 8px 0; padding-left: 20px; position: relative;">
@@ -350,7 +386,7 @@
                 Added 'FilePath' column in all datasets based on the Image index because we have image name and image Index value is same in file and directory. Also remove the duplicate rows from split datasets</li>
         </ul>
         
-        <h3>3.2.1 Data Augmentation</h3>
+        <h3 id="data-augmentation">3.2.1 Data Augmentation</h3>
         <p>The process of artificially creating new data from preexisting data, known as data augmentation. Modern machine learning models are very powerful, so this is a crucial step in the dataset building process. If these models are given too small datasets, they may begin to "overfit," which is a problem where the models simply memorize the mappings between their inputs and expected outputs.</p>
         <p>In the code I have two functions for data augmentation one ‘get_train_generator’ is giving augmented generator for training dataset, and other ‘get_test_and_valid_generator’ is giving augmented generator for validation and testing dataset. One of the most important thing, generating augmented data based on the flow_from_dataframe here is the couple of configuration where I’m using in ImageDataGenerator for training data</p>
 
@@ -393,7 +429,7 @@
                 <strong>fill_mode=reflect: </strong>parameter mean image will be reflected at the boundary.</li>
         </ul>
 
-        <h3>3.2.2 Data Visualization</h3>
+        <h3 id="data-visualization">3.2.2 Data Visualization</h3>
         <p>Data visualization is the process of graphical representation of data, at this stage we have train, valid and test generator batch dataset with various configuration by image data generator. For the multi-classification of image that will be show single X-ray image having multiple diseases that will predict at the end of evaluation. So, this figure showing the labels on each image that will represent diseases on that X-ray image. For example, a patient could have Infiltration and Hernia, and model should correctly predict both conditions.</p>
 
         <div style="display: flex; justify-content: space-around; margin: 20px 0; flex-wrap: wrap;">
@@ -421,15 +457,15 @@
             </div>
         </div>
 
-        <h3>3.3 Model Building</h3>
+        <h3 id="model-building">3.3 Model Building</h3>
         <p>Utilizing machine learning model convolutional neural Networks (CNNs) and pre trained models such as (InceptionV3, VGG16 and ResNet50) imageNet weights, excluding the top layers typically involves various components like weights, include top and input shape</p>
 
-        <h3>3.3.1 Searching Best Parameters</h3>
+        <h3 id="best-parameters">3.3.1 Searching Best Parameters</h3>
         <p>Before fitting the model on the training and validation datasets, it's important to determine the best parameters using RandomizedSearchCV along with a Keras classifier. The following steps outline the process of finding the optimal parameters using this approach.</p>
         <p>I created two methods for finding the best parameters on train generator dataset. The first method named (get_batch_parameter) feeding the model with default values in search the best batch size and epochs on one augmented batch which is default 32. Same as for the sec-ond searching method named (get_parameters_using_bacth) feeding the model with default values and batch size and epochs which got best from the first method. This method gives the best optimizer, learning rate, init mode, activation and dropout rate for that model.</p>
         <p>We defined the array of all parameters and build dictionary for all parameters. Pass the keras model to random search class as well as grid search dictionary and iteration step with cross validation score.</p>
 
-        <h3>3.3.2 Convolutional Neural Network (CNN) Architecture</h3>
+        <h3 id="cnn-architecture">3.3.2 Convolutional Neural Network (CNN) Architecture</h3>
         <p>I wrap this model in function having parameters with default values, and that parameters is using in function body:</p>
         <p><strong>Input Layer:</strong> Defined the sequential model then add the input layer with convolutional layer that has 64 filter, a 3*3 kernel size, and use the activation parameter with default value is relu and also add kernel initializer function with assign the default value of init_mode. So the input shape matches the size of the images, and padding is assign to same to preserve the spatial dimensions.</p>
         <p><strong>Conv2D Layers:</strong> Convolutional layers with 32, 64, and 128 filters are gradually added by the model. These layers capture various level of features, so from the low level features like edges and textures in earlier layers to more complex patterns in deeper layers.</p>
@@ -439,7 +475,7 @@
         <p><strong>Compilation:</strong> For the CNN model compilation, binary_crossentropy is employed as the loss function, suitable for independent label predictions, with default Adam as the optimizer set to a 0.01 default learning rate, and accuracy as the metric to evaluate performance.</p>
 
 
-        <h3>3.3.3 Pre-Trained Models Architecture</h3>
+        <h3 id="pretrained-models">3.3.3 Pre-Trained Models Architecture</h3>
         <p>In this project we are using three pre-trained models which is (RESNET50, VGG16 and InceptionV3) these models having the same architecture except base layer. Every model wrapped in the individual function with parameters having default values, thus these default values are using at the time of best parameters searching. Every model will reinitialize after finding the best parameter values and then that values will be feed to specific model. Now defining the layers that will be common in for every models.</p>
         <p><strong>Input Layer:</strong> defined the input layer with the shape of image size is 128*128 and colour channel is 3 (which is in the RGB).</p>
         <p><strong>Base Model:</strong> Defined the pre-trained model architecture, which is exclude the fully connected layers at the top of the model network, keeping only the convolutional base layer. Also initializ-es the base model with pre trained weights with ImageNet dataset. So, at the end of this layer using inputs which is defined in the previous step.</p>
@@ -450,7 +486,7 @@
 
         <p>I'm writing for the definition of each of the models. To find the best parameters, I first assign the model to the Kera’s classifier using default values, as I previously discussed in the model architecture. Subsequently, the parameter values will be assigned to the respective model, and the model summary will be displayed in support of the optimal parameter values. Next, before fitting the model, make predictions about unseen data. Run the model fit on a data generator for both training and validation. We will obtain the historical data on model fitting in order to display the loss and accuracy graph visualization. Next, test the model on hypothetical data to determine its accuracy and loss, then store the name of a particular model variable to deter-mine which model performs the best. After fitting the training data, predict the model on unseen data once more. The ROC report for that particular model will then be displayed. The same process is implemented on all models.</p>
 
-        <h3>3.4 Model Evaluation</h3>
+        <h3 id="model-evaluation">3.4 Model Evaluation</h3>
         <p>In the phase of the model evaluation, we rank the highest performing model according to accuracy. As previously mentioned, we store the accuracy and loss of each model in the corresponding model variables, create a new array based on the model’s variables and display visualization graph for all models.</p>
 
         <div style="display: flex; justify-content: center; margin: 20px 0; flex-wrap: wrap;">
@@ -533,28 +569,28 @@
 
         
 
-        <h3>3.5 Deployment</h3>
+        <h3 id="deployment">3.5 Deployment</h3>
         <p>In the deployment phase, the best-performing model, identified as <strong>InceptionV3</strong> with the highest accuracy, is saved for future use. This model is prepared for integration into a production environment where it can be utilized for real-time chest X-ray image classification. The deployment process includes finalizing the model's architecture, ensuring that it can efficiently handle unseen data, and exporting it in a format compatible with deployment platforms. The deployed model is expected to aid in medical diagnostics by accurately predicting multiple diseases from chest X-ray images.</p>
 
         <!-- Start the fourth section which is the Conclusion -->
 
-        <h2>4. Conclusion</h2>
+        <h2 id="conclusion">4. Conclusion</h2>
 
-        <h3>4.1 Summary of Findings</h3>
+        <h3 id="summary-findings">4.1 Summary of Findings</h3>
         <p>This project focuses on the multi-label classification of chest X-ray images using deep learning models, aiming to predict multiple diseases from a single image. The methodology involves several key steps, including understanding the data, preparation of the data, data augmentation, model building with hyperparameter tuning, and performance evaluation. Data augmentation techniques like rotation, shear, and flipping are employed to prevent overfitting and enhance model robustness.</p>
         <p>The dissertation outlines a systematic approach to finding the optimal hyperparameters for the models. Two methods are used: one for searching the best parameters across batches and epochs, and another for tuning learning rates, initialization modes, activation functions, and dropout rates. Once the best parameters are identified, they are applied to the models, which are then trained on the data. After training, the models are evaluated on unseen data, and performance is visualized through metrics like ROC curves.</p>
         <p>The process is repeated across different models, with the goal of identifying the model that achieves the highest accuracy. The best-performing model is then subjected to further evalua-tion, including the generation of confusion matrices, F1-score, recall, precision and classification reports. Finally, this model is saved and prepared for deployment, where it can be utilized to assist radiologists by automating the detection of multiple diseases from chest X-rays, thereby reducing their workload and improving diagnostic efficiency.</p>
         
-        <h3>4.2 Evaluation</h3>
+        <h3 id="evaluation">4.2 Evaluation</h3>
         <p>The objective of this project was to develop a robust and accurate deep learning models capabilities of classifying multiple diseases from chest X-ray images. The model aimed to assist in the medical diagnosis of conditions such as Atelectasis, Consolidation, Infiltration, Pneumothorax, Edema, Emphysema, Fibrosis, Effusion, Pneumonia, Pleural thickening, Cardiomegaly, Nodule, Mass and Hernia, even in the presence of unseen data, varying image quality, and diverse patient demographics. The project assessed four deep learning models for the classification of several thoracic diseases from chest X-ray images. The model low accuracy and performance metrics across various neuron layers were caused by overfitting, despite the fact that it was intended to reduce false positives and negatives and improve generalization.</p>
         
-        <h3>4.3 Future Work</h3>
+        <h3 id="future-work">4.3 Future Work</h3>
         <p>The limitations that I have faced during the project is the model performance on training data as I mentioned earlier in achievements section, when I fit the training and validation generator data on model that is going to be overfitting during the training process due to the dataset. right now, getting the image file path from dataset, but for the improving next will get direct from the directory when generating the data via augmentation process. For improving the model performance create the folder with the name of label and furthermore will create test and train folder in every label sub directory, put the images there will use that directory for the time of data augmentation which will give the training generator and test generator. After that will use that generator dataset for the searching best parameters and model fitting.</p>
         <p>The next step that I have to improve getting the best parameters via Random search, for now when we search best param’s for specific model, we are fitting the first batch on grid search because if we pass all the batches or generated dataset in the grid search it takes lots of time in searching and sometime giving the error due to the memory pressure (the error is out of the range or by a memory leak).</p>
 
         <!-- Start the fifth section which is the References and Appendices -->
 
-        <h2>References</h2>
+        <h2 id="references">References</h2>
         <p>The following references represent key contributions to the field of image classification and computer vision:</p>
         
         <ol>
@@ -571,21 +607,60 @@
         
         <p><em>Note: This is a representative selection of references. The complete bibliography contains additional sources covering theoretical foundations, methodological approaches, and recent advances in image classification research.</em></p>
 
-        <h2>Appendices</h2>
+        <h2 id="appendices">Appendices</h2>
         
-        <h3>Appendix A: Technical Implementation Details</h3>
+        <h3 id="appendix-a">Appendix A: Technical Implementation Details</h3>
         <p>This section provides detailed implementation specifications, including hyperparameter configurations, training procedures, and computational requirements for reproducing the experimental results.</p>
         
-        <h3>Appendix B: Additional Experimental Results</h3>
+        <h3 id="appendix-b">Appendix B: Additional Experimental Results</h3>
         <p>Supplementary experimental data, extended performance metrics, and detailed statistical analyses supporting the main findings of the research.</p>
         
-        <h3>Appendix C: Code Repository</h3>
+        <h3 id="appendix-c">Appendix C: Code Repository</h3>
         <p>Links to publicly available code repositories containing implementation details, trained models, and experimental scripts for research reproducibility.</p>
     </article>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" title="Back to Top"></button>
 
     <div class="footer">
         <p>© 2025 Advanced Image Classification Research | Department of Computer Science</p>
         <p><em>This represents to original research in computer vision and machine learning</em></p>
     </div>
+    
+    <script>
+        // Back to Top Button Functionality
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            
+            // Show button when user scrolls down 300px
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Smooth scroll to top when button is clicked
+        document.getElementById('backToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add smooth scrolling to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
