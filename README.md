@@ -81,7 +81,7 @@ warnings.filterwarnings('ignore')
 
 ```
 image-classification/
-├── CNN_V1.ipynb              # Main implementation notebook
+├── Models/CNN_V1.ipynb              # Main implementation notebook
 ├── data/                     # Dataset directory
 │   ├── images/              # Image files
 │   └── labels.csv           # Labels and metadata
@@ -122,7 +122,7 @@ RANDOM_STATE = 3          # Random state for reproducibility
 SEED = 42                 # Global seed value
 
 # Define target labels for multi-label classification
-labels = ['Label1', 'Label2', 'Label3', ...]  # Specific to your dataset
+labels = ['Cardiomegaly', 'Emphysema', 'Effusion', ...]  # Specific to your dataset
 ```
 
 **Configuration Details:**
