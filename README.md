@@ -1,6 +1,6 @@
-# CNN Image Classification Project
+# Advanced Image Classification Techniques in Computer Vision
 
-This project implements a Convolutional Neural Network (CNN) for multi-label medical image classification. The model is designed to classify chest X-ray images across multiple pathological conditions simultaneously.
+This project implements machine learning models for multi-label medical image classification. Specifically, it uses a Convolutional Neural Network (CNN), VGG, RESTNET and INCEPTION model to classify chest X-ray images across multiple pathological conditions simultaneously. The following section explains the CNN model for better understanding of the code
 
 ## Table of Contents
 
